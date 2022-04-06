@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="css/uikit.css">
+    <link rel='stylesheet icone' href='https://css.gg/css'>
+    <link rel="stylesheet euquefiz" href="css/estilo.css">
+    <script src="js/uikit.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/site.js"></script>
+
+</head>
+
+<body>
+
+
+    <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left">
+
+            <a class="uk-navbar-item uk-logo" href="#">
+                <img id="logo" src="C:\Users\sofia\OneDrive\Área de Trabalho\calculadora\imagens\logo.png">
+            </a>
+            <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
+    </div>     
+        <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav">
+                <li class="uk-active"><a href="index.html"><i class="icone gg-calculator"></i>Calculadora</a></li>
+                <li><a href="pegadacarbono.html"><i class="gg-cloud"></i>O que é a Pegada de Carbono</a></li>
+                <li><a href="comofunciona.html"><i class="icone gg-notes"></i>Como funciona a Calculadora</a></li>
+                <li><a href="praticassustentaveis.html"><i class="icone gg-trees"></i>Práticas Sustentáveis</a></li>
+                <li>
+                    <a href="sobrelabtech2.html"><i class="icone gg-smile"></i>Sobre o Labtech2</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="uk-container uk-container-large" style="margin-top: 36px;">
+        <ul class="uk-subnav uk-subnav-divider" uk-margin>
+            <li><a href="javascript:void(0)" onclick="irParaPergunta(1)" class="">Quantidade de pessoas</a></li>
+            <li><a href="javascript:void(0)" onclick="irParaPergunta(2)" class="">Energia Elétrica</a></li>
+            <li><a href="javascript:void(0)" onclick="irParaPergunta(3)" class="">Consumo de gás</a></li>
+            <li><a href="javascript:void(0)" onclick="irParaPergunta(4)" class="">Quantidade de resíduos</a></li>
+            <li><a href="javascript:void(0)" onclick="irParaPergunta(5)" class="">Transporte Individual</a></li>
+            <li><a href="javascript:void(0)" onclick="irParaPergunta(6)" class="">Transporte Coletivo</a></li>
+            <li><a href="javascript:void(0)" onclick="irParaPergunta(7)" class="">Consumo de carne</a></li>
+        </ul>
+    </div>
+
+    <div class="container-perguntas uk-container uk-container-small">
+
+        <!-- AQUI VAI UMA PERGUNTA -->
+        <div id="div-pergunta-0" class="uk-padding-large div-pergunta">
+            <div class="uk-container"> 
+                <h1>Vamos calcular sua pegada de carbono!</h1>
+            </div>
+            <div class="uk-grid-match uk-child-width-1-2@m" uk-grid>
+                <div>
+                    <img src="C:\Users\sofia\OneDrive\Área de Trabalho\calculadora\imagens\escorpiao.png">
+                </div>
+
+                <div class="uk-flex uk-flex-column uk-width-1-2 ">
+                    <div class="texto-primeiro-slide">
+                        <p>Oi! Eu sou Yoshi e vou te ajudar a calcular o quanto o seu cotidiano impacta no meio ambiente!</p>
+                    </div>
+                   <span id="descricao-primeiro-slide">Se você não sabe o que é uma pegada de carbono, clique
+                        <a class="uk-link-text" href="pegadacarbono.html">aqui</a>
+                   </span>
+                    <div class="uk-margin-top uk-flex uk-width-1-1">
+                        <button type="button" class="uk-button uk-button-primary passar-slide "onclick="irParaProxima(this)"> Vamos lá!</button> 
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>   
+
+
+
+        <div id="div-pergunta-1" class="uk-padding-large div-pergunta " style="display: none">
+            <progress id="js-progressbar" class=" uk-progress " value="10" max="70"></progress>
+            <div class="uk-grid-match uk-child-width-1-2@m pergunta" uk-grid>
+                
+                <form uk-grid>
+                    <fieldset class="uk-fieldset">
+                        <legend class="uk-legend">Quantas pessoas moram na sua casa?</legend>
+                    </fieldset>
+                    <div uk-grid>
+                        <input id="input-pergunta-1" class="uk-input resposta uk-width-3-4" type="number">
+                        <button class="botao botao-enviar uk-width-auto@m" onclick="irParaProxima(this)"> Enviar </button>
+                    </div>
+                    <div class="uk-margin-top uk-flex uk-width-1-1">
+                        <a class="uk-slidenav-large uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous onclick="irParaAnterior(this)"></a>
+                        <a class="uk-slidenav-large uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next onclick="irParaProxima(this)"></a>
+                    </div>  
+                </form>
+                <div class="uk-child-width-1-2@m uk-animation-toggle" tabindex="0" uk-grid>
+                    <svg width="10" height="10" viewBox="0 0 10 10" src="C:\Users\sofia\OneDrive\Área de Trabalho\sofia\sofia\svg\home-svgrepo-com.svg"> 
+                    </svg>
+                </div>
+            </div>               
+        </div>
+
+        <div id="div-pergunta-2" class="uk-padding-large div-pergunta" style="display:none">
+            <progress id="js-progressbar" class="uk-progress " value="20" max="70"></progress>
+            <div class="uk-grid-match uk-child-width-1-2@m" uk-grid>
+                <form uk-grid>
+                    <fieldset class="uk-fieldset">
+                        <legend class="uk-legend">Qual a quantidade de consumo de energia elétrica em Kwh?</legend>
+                    </fieldset>
+                    <div uk-grid>
+                        <input id="input-pergunta-2" class="uk-input resposta uk-width-3-4" type="number">
+                        <button class="botao botao-enviar uk-width-auto@m" onclick="irParaProxima(this)"> Enviar </button>
+                    </div>
+                    <div class="uk-margin-top uk-flex uk-width-1-1">
+                        <a class="uk-slidenav-large uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous onclick="irParaAnterior(this)"></a>
+                        <a class="uk-slidenav-large uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next onclick="irParaProxima(this)"></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="div-pergunta-3" class="uk-padding-large div-pergunta" style="display:none">
+            <progress id="js-progressbar" class="uk-progress " value="30" max="70"></progress>
+            <div class="uk-grid-match uk-child-width-1-2@m" uk-grid>
+                    <form uk-grid>
+                    <fieldset class="uk-fieldset">
+                        <legend class="uk-legend">Qual o número de botijões utilizados por mês?</legend>
+                    </fieldset>
+                    <div uk-grid>
+                        <input id="input-pergunta-3" class="uk-input resposta uk-width-3-4" type="number">
+                        <button class="botao botao-enviar uk-width-auto@m" onclick="irParaProxima(this)"> Enviar </button>
+                    </div>
+                    <div class="uk-margin-top uk-flex uk-width-1-1">
+                        <a class="uk-slidenav-large uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous onclick="irParaAnterior(this)"></a>
+                        <a class="uk-slidenav-large uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next onclick="irParaProxima(this)"></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="div-pergunta-4" class="uk-padding-large div-pergunta" style="display:none">
+            <progress id="js-progressbar" class="uk-progress " value="40" max="70"></progress>
+                <div class="uk-grid-match uk-child-width-1-2@m" uk-grid>
+                <form uk-grid>
+                    <fieldset class="uk-fieldset">
+                        <legend class="uk-legend">Quantos Kg de resíduos são gerados por dia?</legend>
+                    </fieldset>
+                    <div uk-grid>
+                        <input id="input-pergunta-4" class="uk-input resposta uk-width-3-4" type="number">
+                        <button class="botao botao-enviar uk-width-auto@m" onclick="irParaProxima(this)"> Enviar </button>
+                    </div>
+                    <div class="uk-margin-top uk-flex uk-width-1-1">
+                        <a class="uk-slidenav-large uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous onclick="irParaAnterior(this)"></a>
+                        <a class="uk-slidenav-large uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next onclick="irParaProxima(this)"></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="div-pergunta-5" class="uk-padding-large div-pergunta" style="display:none">
+            <progress id="js-progressbar" class="uk-progress" value="50" max="70"></progress>
+            <div class="uk-grid-match uk-child-width-1-2@m" uk-grid>
+                <form uk-grid>
+                    <fieldset class="uk-fieldset">
+                        <legend class="uk-legend">Quantos km por semana você andou com meios de transporte
+                            individuais?
+                        </legend>
+                    </fieldset>
+                    <div uk-grid>
+                        <input id="input-pergunta-5" class="uk-input resposta uk-width-3-4" type="number">
+                        <button class="botao botao-enviar uk-width-auto@m" onclick="irParaProxima(this)"> Enviar </button>
+                    </div>
+                    <div class="uk-margin-top uk-flex uk-width-1-1">
+                        <a class="uk-slidenav-large uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous onclick="irParaAnterior(this)"></a>
+                        <a class="uk-slidenav-large uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next onclick="irParaProxima(this)"></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="div-pergunta-6" class="uk-padding-large div-pergunta " style="display:none">
+            <progress id="js-progressbar" class="uk-progress" value="60" max="70"></progress>
+            <div class="uk-grid-match uk-child-width-1-2@m" uk-grid>
+                <form uk-grid>
+                    <fieldset class="uk-fieldset">
+                        <legend class="uk-legend">Quantos km por semana você andou com meios de transporte coletivos?
+                        </legend>
+                    </fieldset>
+                    <div uk-grid class="uk-position-relative uk-position-right">
+                        <input id="input-pergunta-6" class="uk-input resposta uk-width-3-4" type="number">
+                        <button class="botao botao-enviar uk-width-auto@m" onclick="irParaProxima(this)"> Enviar </button>
+                    </div>
+                    <div class="uk-margin-top uk-flex uk-width-1-1">
+                        <a class="uk-slidenav-large uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous onclick="irParaAnterior(this)"></a>
+                        <a class="uk-slidenav-large uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next onclick="irParaProxima(this)"></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+
+        <div id="div-pergunta-7" class="uk-padding-large div-pergunta" style="display:none">
+            <progress id="js-progressbar" class="uk-progress" value="70" max="70"></progress>
+            <div class="uk-grid-match uk-child-width-1-2@m" uk-grid>
+                <form uk-grid>
+                    <fieldset class="uk-fieldset">
+                        <legend class="uk-legend">Quantas vezes por semana você consome carne?</legend>
+                    </fieldset>
+                    <div uk-grid  class="uk-position-relative uk-position-right">
+                        <input id="input-pergunta-7" class="uk-input resposta uk-width-expand" type="number">
+                    </div>
+                    <div class="uk-margin-top uk-flex uk-width-1-1">
+                        <a class="uk-slidenav-large uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous onclick="irParaAnterior(this)"></a>
+                        </button>
+                        <button type="button" class="uk-button uk-button-primary passar-slide"onclick="finalizarCalculo()">Pronto! Confira os cálculos!</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    <div id="modal-resultados" class="uk-modal-container" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <h2 class="uk-modal-title">Resultados!</h2>
+            <div class="">Agora vamos comparar o seu estilo de vida com um estilo de vida sustentável</div>
+            <div class=" uk-text-center ">
+                <table class="uk-table uk-table-striped">
+                    <thead>
+                        <th></th>
+                        <th>Vida Limpa</th>
+                        <th>Vida Suja</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Quantidade de pessoas</td>
+                            <td class="texto-verde"><span id="resultado-limpo-1"></span> kg CO²</td>
+                            <td class="texto-vermelho"><span id="resultado-sujo-1"></span> kg CO²</td>
+                        </tr>
+                        <tr>
+                            <td>Energia Elétrica</td>
+                            <td class="texto-verde"><span id="resultado-limpo-2"></span> kg CO²</td>
+                            <td class="texto-vermelho"><span id="resultado-sujo-2"></span> kg CO²</td>
+                        </tr>
+                        <tr>
+                            <td>Consumo de gás</td>
+                            <td class="texto-verde"><span id="resultado-limpo-3"></span> kg CO²</td>
+                            <td class="texto-vermelho"><span id="resultado-sujo-3"></span> kg CO²</td>
+                        </tr>
+                        <tr>
+                            <td>Quantidade de resíduos</td>
+                            <td class="texto-verde"><span id="resultado-limpo-4"></span> kg CO²</td>
+                            <td class="texto-vermelho"><span id="resultado-sujo-4"></span> kg CO²</td>
+                        </tr>
+                        <tr>
+                            <td>Transporte Individual</td>
+                            <td class="texto-verde"><span id="resultado-limpo-5"></span> kg CO²</td>
+                            <td class="texto-vermelho"><span id="resultado-sujo-5"></span> kg CO²</td>
+                        </tr>
+                        <tr>
+                            <td>Transporte Coletivo</td>
+                            <td class="texto-verde"><span id="resultado-limpo-6"></span> kg CO²</td>
+                            <td class="texto-vermelho"><span id="resultado-sujo-6"></span> kg CO²</td>
+                        </tr>
+                        <tr>
+                            <td>Consumo de carne</td>
+                            <td class="texto-verde"><span id="resultado-limpo-7"></span> kg CO²</td>
+                            <td class="texto-vermelho"><span id="resultado-sujo-7"></span> kg CO²</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div>Você poderia evitar <span id="diferenca" class="texto-verde">200 KG</span> de emissão de gases
+                    efeito estufa!</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
